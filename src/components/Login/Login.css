@@ -1,0 +1,98 @@
+/* Full screen black background + center form */
+.login-wrapper {
+  height: 100vh;            /* full screen height */
+  width: 100%;
+  background: black;        /* full black background */
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+}
+
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: #0f172a; /* slate-900 */
+  border: 1px solid #334155; /* slate-700 */
+  color: white;
+}
+
+/* Titles */
+.signin-title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.signin-subtitle {
+  color: #cbd5e1; /* slate-300 */
+  margin-top: 4px;
+}
+
+/* Form */
+.signin-form {
+  margin-top: 30px;
+}
+
+.signin-label {
+  font-weight: 500;
+  color: #cbd5e1;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signin-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: white;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.signin-input:focus {
+  outline: none;
+  border-color: #6366f1; /* indigo-500 */
+  box-shadow: 0 0 0 1px #6366f1;
+}
+
+/* Forgot */
+.signin-forgot {
+  text-align: right;
+  margin-top: -5px;
+}
+
+.forgot-link {
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  color: #4f46e5;
+}
+
+/* Button */
+.signin-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px;
+  background: #4f46e5; /* indigo-600 */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signin-btn:hover {
+  background: #4338ca; /* indigo-700 */
+}
