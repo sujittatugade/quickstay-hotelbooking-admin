@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
 function Signup() {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,6 +25,7 @@ function Signup() {
       toast.warning("Email and Password is required");
       return;
     }
+    setLoading(true);
     try {
       const res = await api.post("/addAdmin", formData);
       toast.success("Admin Added Successfully");
@@ -33,6 +35,8 @@ function Signup() {
       });
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -71,8 +75,11 @@ function Signup() {
                 />
               </div>
               <div className="buttons">
-                <button className="signup-btn" onClick={handleSubmit}>
-                  Register
+                <button
+                  className="signup-btn"
+                  disabled={loading}
+                  onClick={handleSubmit}>
+                  {loading ? "Registering" : "Register"}
                 </button>
                 <button
                   className="signup-btn"

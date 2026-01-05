@@ -1,32 +1,28 @@
-/* Background */
 .signup-container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
   background: #f7f8fc;
-  min-height: 100vh;
+  padding: 20px;
 }
 
-/* Main Card */
 .signup-card {
-  background: #ffffff;
-  border-radius: 25px;
-  padding: 40px;
-  width: 70%;
+  background: white;
+  border-radius: 24px;
+  width: 100%;
   max-width: 1100px;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .signup-row {
   display: flex;
-  flex-wrap: wrap;
+  gap: 40px;
 }
 
-/* Left Section */
 .signup-left {
   flex: 1;
-  min-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,54 +30,54 @@
 
 .signup-title {
   font-size: 32px;
+  margin-bottom: 30px;
   font-weight: bold;
-  margin-bottom: 25px;
 }
 
 /* Inputs */
 .signup-input-row {
+  width: 100%;
+  max-width: 380px;
   display: flex;
   align-items: center;
-  width: 70%;
-  margin-bottom: 18px;
   background: #f2f2f2;
+  padding: 12px 16px;
   border-radius: 12px;
-  padding: 10px 15px;
+  margin-bottom: 18px;
 }
 
 .signup-input-row .icon {
-  font-size: 20px;
-  margin-right: 12px;
+  font-size: 18px;
+  margin-right: 10px;
   color: #555;
 }
 
 .signup-input-row input {
   border: none;
-  outline: none;
   background: transparent;
+  outline: none;
   width: 100%;
   font-size: 15px;
 }
 
-/* Checkbox */
-.signup-checkbox {
-  margin: 15px 0;
-  width: 90%;
+/* Buttons */
+.buttons {
+  width: 100%;
+  max-width: 380px;
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
 }
 
-/* Button */
 .signup-btn {
-  width: 75%;
+  flex: 1;
   padding: 14px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
+  border-radius: 12px;
+  border: none;
   background: #3b71ca;
   color: white;
-  border: none;
-  border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -90,20 +86,46 @@
   background: #2b59a3;
 }
 
+.signup-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 /* Right Image */
 .signup-right {
   flex: 1;
-  min-width: 300px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .signup-right img {
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
 }
-.buttons{
-  display: flex;
-  gap: 20px;
+@media (max-width: 768px) {
+  .signup-card {
+    padding: 25px;
+  }
+
+  .signup-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .signup-title {
+    font-size: 26px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .signup-btn {
+    width: 100%;
+  }
+
+  .signup-right img {
+    max-width: 260px;
+  }
 }

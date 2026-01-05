@@ -33,11 +33,9 @@ function Login({ setIsAuthenticated }) {
         password: "",
       });
       setIsAuthenticated(true);
-      console.log(res.data);
       setTimeout(() => navigate("/dashboard"), 2000);
     } catch (error) {
       toast.error("Invalid Email or Password");
-      console.log(error);
     }
   };
 
