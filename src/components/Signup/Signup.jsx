@@ -47,7 +47,7 @@ function Signup() {
         password: "",
       });
     } catch (error) {
-      toast.error(error.message);
+      toast.error("Email Already exist");
     } finally {
       setLoading(false);
     }
