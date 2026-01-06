@@ -13,6 +13,11 @@ function Signup() {
     password: "",
   });
 
+  const isValidEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -23,6 +28,14 @@ function Signup() {
   const handleSubmit = async () => {
     if (!formData.email || !formData.password) {
       toast.warning("Email and Password is required");
+      return;
+    }
+    if (!isValidEmail(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    if (formData.password.length < 6) {
+      toast.error("Password must be at least 6 characters");
       return;
     }
     setLoading(true);

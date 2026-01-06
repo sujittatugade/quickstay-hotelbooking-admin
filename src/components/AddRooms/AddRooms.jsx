@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AddRoom.css";
 import { Button, MenuItem, TextField } from "@mui/material";
 import api from "../../Config/api.js";
+import { toast } from "react-toastify";
 
 function AddRooms() {
   const [roomType, setRoomType] = useState("");
@@ -49,15 +50,14 @@ function AddRooms() {
       const res = await api.post("/rooms/add", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      console.log("Room added:", res.data);
-      alert("Room added successfully!");
+      toast.success("Room added successfully!");
       setRoomType("");
       setPrice("");
       setAmenities([]);
       setImages([]);
     } catch (error) {
       console.error("Error adding room:", error);
-      alert("Failed to add room. Check console for details.");
+      toast.error("Failed to add room. Check console for details.");
     }
   };
 

@@ -18,7 +18,6 @@ function RoomList() {
     api
       .get("/rooms/all")
       .then((res) => {
-        console.log("ROOMS FROM API", res.data);
         setRooms(res.data);
       })
       .catch(() => toast.error("Failed to fetch rooms"));
